@@ -45,7 +45,7 @@ public class DataGenerator {
     public static RegistrationInfo generateInfo(String local) {
       Faker faker = new Faker(new Locale(local));
       int n = (int) Math.floor(Math.random() * selectCity.length);
-      return new RegistrationInfo(faker.name().firstName() + "" + faker.name().lastName(),
+      return new RegistrationInfo(faker.name().firstName() + " " + faker.name().lastName(),
           faker.phoneNumber().phoneNumber(), selectCity[n]
       );
     }
