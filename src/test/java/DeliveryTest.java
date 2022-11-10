@@ -21,13 +21,14 @@ public class DeliveryTest {
 
   @BeforeEach
   void setup() {
+    Configuration.holdBrowserOpen = true;
     open("http://localhost:9999");
   }
 
   @Test
   @DisplayName("Should successful plan and replan meeting")
   void shouldSuccessfulPlanAndReplanMeeting() {
-    Configuration.holdBrowserOpen = true;
+
     RegistrationInfo registrationInfo = DataGenerator.Registration.generateInfo("ru");
     var daysToAddForFirstMeeting = 4;
     var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
