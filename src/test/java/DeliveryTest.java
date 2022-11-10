@@ -9,6 +9,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 
+import static com.codeborne.selenide.Condition.exactText;
+import static com.codeborne.selenide.Condition.exactValue;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.open;
@@ -42,10 +45,9 @@ public class DeliveryTest {
     $("[name='phone']").setValue(registrationInfo.getPhone());
     $("[class='checkbox__box']").click();
     $("[class='button__content']").click();
-    $(withText("Успешно!")).should(visible, Duration.ofSeconds(15));
-    $x("//div[@data-test-id='success-notification']//div[@class='notification__content']")
-        .shouldHave(Condition.text("Встреча успешно забронирована на " + firstMeetingDate), Duration.ofSeconds(15))
-        .shouldBe(Condition.visible);
+    $x("//div[@data-test-id='success-notification']//div[@class='notification__icon']").should(visible, Duration.ofSeconds(15));
+    $x("//*[@class='notification__content']").shouldHave(Condition.text("Встреча успешно забронирована на " + firstMeetingDate), Duration.ofSeconds(15));
+
 
 
    /*
