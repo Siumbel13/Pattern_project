@@ -1,10 +1,10 @@
-package Utils;
+package utils;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-import Entities.RegistrationInfo;
+import entities.RegistrationInfo;
 import com.github.javafaker.Faker;
 import lombok.experimental.UtilityClass;
 

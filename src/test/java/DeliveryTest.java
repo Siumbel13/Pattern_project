@@ -1,7 +1,7 @@
 import java.time.Duration;
 
-import Entities.RegistrationInfo;
-import Utils.DataGenerator;
+import entities.RegistrationInfo;
+import utils.DataGenerator;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
